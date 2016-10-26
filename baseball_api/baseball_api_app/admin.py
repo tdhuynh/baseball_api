@@ -1,3 +1,4 @@
 from django.contrib import admin
+from baseball_api_app.models import Master, Batting, Fielding, Pitching
 
-# Register your models here.
+admin.site.register([Master, Batting, Fielding, Pitching])
