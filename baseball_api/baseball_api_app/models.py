@@ -1,3 +1,27 @@
 from django.db import models
 
-# Create your models here.
+class Master(models.Model):
+    player_code = models.CharField(max_length=20, blank=True)
+    birth_year = models.IntegerField(null=True)
+    birth_month = models.IntegerField(null=True)
+    birth_day = models.IntegerField(null=True)
+    birth_country = models.CharField(max_length=50, blank=True)
+    birth_state = models.CharField(max_length=50, blank=True)
+    birth_city = models.CharField(max_length=50, blank=True)
+    death_year = models.IntegerField(null=True)
+    death_month = models.IntegerField(null=True)
+    death_day = models.IntegerField(null=True)
+    death_country = models.CharField(max_length=50, blank=True)
+    death_state = models.CharField(max_length=50, blank=True)
+    death_city = models.CharField(max_length=50, blank=True)
+    name_first = models.CharField(max_length=20, blank=True)
+    name_last = models.CharField(max_length=20, blank=True)
+    name_given = models.CharField(max_length=50, blank=True)
+    weight = models.IntegerField(null=True)
+    height = models.IntegerField(null=True)
+    bats = models.CharField(max_length=1, blank=True)
+    throws = models.CharField(max_length=1, blank=True)
+    debut = models.CharField(max_length=20, blank=True)
+    final_game = models.CharField(max_length=20, blank=True)
+    retro_code = models.CharField(max_length=20, blank=True)
+    bbref_code = models.CharField(max_length=20, blank=True)
