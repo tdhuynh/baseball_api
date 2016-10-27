@@ -25,7 +25,7 @@ def add_info(apps, schema_editor):
                                    batters_hit_by_pitch=row["HBP"],balks=row["BK"],batters_faced_by_pitcher=row["BFP"],games_finished=row["GF"],
                                    runs_allowed=row["R"],sacrifices_by_opp_batters=row["SH"],sacrifice_flies_by_opp_batters=row["SF"],grounded_into_double_plays_by_opp_batters=row["GIDP"],
                                    )
-    raise Exception ("OOGLY BOOGLY")
+    # raise Exception ("DON'T DO IT)
 
 
 class Migration(migrations.Migration):
