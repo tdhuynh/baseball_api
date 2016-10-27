@@ -14,7 +14,7 @@ class BattingSerializer(serializers.ModelSerializer):
         view_name = "master_detail_update_destroy_api_view",
         read_only = True,
     )
-    on_base_percentage = serializers.FloatField()
+    # on_base_percentage = serializers.FloatField()
     class Meta:
         model = Batting
         fields = '__all__'
