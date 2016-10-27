@@ -51,6 +51,7 @@ class Batting(models.Model):
     sacrifice_flies = models.CharField(max_length=50, null=True, blank=True)
     grounded_into_double_plays = models.CharField(max_length=50, null=True, blank=True)
 
+
 class Pitching(models.Model):
     player_code = models.ForeignKey(Master)
     year_code = models.CharField(max_length=50, null=True, blank=True)

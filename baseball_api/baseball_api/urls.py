@@ -1,21 +1,20 @@
-"""baseball_api URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import url
 from django.contrib import admin
 
+from baseball_api_app.views import MasterListCreateAPIView, MasterUpdateDestroyAPIView, \
+                                   BattingListCreateAPIView, BattingUpdateDestroyAPIView, \
+                                   PitchingListCreateAPIView, PitchingUpdateDestroyAPIView, \
+                                   FieldingListCreateAPIView, FieldingUpdateDestroyAPIView, \
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/master/$', MasterListCreateAPIView.as_view(), name="master_list_create_api_view"),
+    url(r'^api/master/(?P<pk>\d+)/$', MasterUpdateDestroyAPIView.as_view(), name="master_update_destroy_api_view"),
+    url(r'^api/batting/$', BattingListCreateAPIView.as_view(), name="batting_list_create_api_view"),
+    url(r'^api/batting/(?P<pk>\d+)/$', BattingUpdateDestroyAPIView.as_view(), name="batting_update_destroy_api_view"),
+    url(r'^api/pitching/$', PitchingListCreateAPIView.as_view(), name="pitching_list_create_api_view"),
+    url(r'^api/pitching/(?P<pk>\d+)/$', PitchingUpdateDestroyAPIView.as_view(), name="pitching_update_destroy_api_view"),
+    url(r'^api/fielding/$', FieldingListCreateAPIView.as_view(), name="fielding_list_create_api_view"),
+    url(r'^api/fielding/(?P<pk>\d+)/$', FieldingUpdateDestroyAPIView.as_view(), name="fielding_update_destroy_api_view"),
 ]
