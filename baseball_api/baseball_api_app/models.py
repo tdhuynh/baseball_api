@@ -51,6 +51,12 @@ class Batting(models.Model):
     sacrifice_flies = models.CharField(max_length=50, null=True, blank=True)
     grounded_into_double_plays = models.CharField(max_length=50, null=True, blank=True)
 
+    @property
+    def on_base_percentage(self):
+        num = int(self.hits) + int(self.walks) + int(self.hit_by_pitch)
+        den = int(self.at_bats) + int(self.walks) + int(self.hit_by_pitch) + int(sacrifice_flies)
+        return num / den
+
 
 class Pitching(models.Model):
     player_code = models.ForeignKey(Master)

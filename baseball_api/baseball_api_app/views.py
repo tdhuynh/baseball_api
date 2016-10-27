@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetreiveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from baseball_api_app.models import Master, Batting, Pitching, Fielding
 from baseball_api_app.serializers import MasterSerializer, BattingSerializer, PitchingSerializer, FieldingSerializer
@@ -10,7 +10,7 @@ class MasterListCreateAPIView(ListCreateAPIView):
     serializer_class = MasterSerializer
 
 
-class MasterUpdateDestroyAPIView(RetreiveUpdateDestroyAPIView):
+class MasterDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Master.objects.all()
     serializer_class = MasterSerializer
 
@@ -20,7 +20,7 @@ class BattingListCreateAPIView(ListCreateAPIView):
     serializer_class = BattingSerializer
 
 
-class BattingUpdateDestroyAPIView(RetreiveUpdateDestroyAPIView):
+class BattingDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Batting.objects.all()
     serializer_class = BattingSerializer
 
@@ -30,7 +30,7 @@ class PitchingListCreateAPIView(ListCreateAPIView):
     serializer_class = PitchingSerializer
 
 
-class PitchingUpdateDestroyAPIView(RetreiveUpdateDestroyAPIView):
+class PitchingDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Pitching.objects.all()
     serializer_class = PitchingSerializer
 
@@ -40,6 +40,6 @@ class FieldingListCreateAPIView(ListCreateAPIView):
     serializer_class = FieldingSerializer
 
 
-class FieldingUpdateDestroyAPIView(RetreiveUpdateDestroyAPIView):
+class FieldingDetailUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Fielding.objects.all()
     serializer_class = FieldingSerializer
