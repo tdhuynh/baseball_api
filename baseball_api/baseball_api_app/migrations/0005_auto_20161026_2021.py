@@ -23,44 +23,44 @@ def add_info(apps, schema_editor):
                                   debut=row["debut"],final_game=row["finalGame"],retro_code=row["retroID"],bbref_code=row["bbrefID"]
                                   )
 
+    # with open("batting.csv") as open_file:
+    #     batting_info = csv.DictReader(open_file)
+    #     for row in batting_info:
+    #         player_code = Master.objects.get(player_code=row["playerID"])
+    #         Batting.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
+    #                                league_code=row["lgID"],games=row["G"],at_bats=row["AB"],runs=row["R"],hits=row["H"],
+    #                                doubles=row["2B"],triples=row["3B"],runs_batted_in=row["RBI"],stolen_bases=row["SB"],
+    #                                caught_stealing=row["CS"],walks=row["BB"],strikeouts=row["SO"],intentional_walks=row["IBB"],
+    #                                hit_by_pitch=row["HBP"],sacrifice_hits=row["SH"],sacrifice_flies=row["SF"],grounded_into_double_plays=row["GIDP"]
+    #                                )
 
-    with open("batting.csv") as open_file:
-        batting_info = csv.DictReader(open_file)
-        for row in batting_info:
-            player_code = Master.objects.get(player_code=row["playerID"])
-            Batting.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
-                                   league_code=row["lgID"],games=row["G"],at_bats=row["AB"],runs=row["R"],hits=row["H"],
-                                   doubles=row["2B"],triples=row["3B"],runs_batted_in=row["RBI"],stolen_bases=row["SB"],
-                                   caught_stealing=row["CS"],walks=row["BB"],strikeouts=row["SO"],intentional_walks=row["IBB"],
-                                   hit_by_pitch=row["HBP"],sacrifice_hits=row["SH"],sacrifice_flies=row["SF"],grounded_into_double_plays=row["GIDP"]
-                                   )
 
-    with open("pitching.csv") as open_file:
-        pitching_info = csv.Dictreader(open_file)
-        for row in pitching_info:
-            player_code = Master.objects.get(player_code=row["playerID"])
-            Pitching.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
-                                   league_code=row["lgID"],wins=row["W"],losses=row["L"],games=row["G"],games_started=row["GS"],
-                                   completed_games=row["CG"],shutouts=row["SHO"],saves=row["SV"],outs_pitched=row["IPOuts"],
-                                   hits=row["H"],earned_runs=row["ER"],walks=row["BB"],strikeouts=row["SO"],
-                                   opponent_batting_average=row["BAOpp"],earned_run_average=row["ERA"],intentional_walks=row["IBB"],wild_pitches=row["WP"],
-                                   batters_hit_by_pitch=row["HBP"],balks=row["BK"],batters_faced_by_pitcher=row["BFP"],games_finished=row["GF"],
-                                   runs_allowed=row["R"],sacrifices_by_opp_batters=row["SH"],sacrifice_flies_by_opp_batters=row["SF"],grounded_into_double_plays_by_opp_batters=row["GIDP"],
-                                   )
+    # with open("pitching.csv") as open_file:
+    #     pitching_info = csv.DictReader(open_file)
+    #     for row in pitching_info:
+    #         player_code = Master.objects.get(player_code=row["playerID"])
+    #         Pitching.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
+    #                                league_code=row["lgID"],wins=row["W"],losses=row["L"],games=row["G"],games_started=row["GS"],
+    #                                completed_games=row["CG"],shutouts=row["SHO"],saves=row["SV"],outs_pitched=row["IPouts"],
+    #                                hits=row["H"],earned_runs=row["ER"],homeruns=row["HR"],walks=row["BB"],strikeouts=row["SO"],
+    #                                opponent_batting_average=row["BAOpp"],earned_run_average=row["ERA"],intentional_walks=row["IBB"],wild_pitches=row["WP"],
+    #                                batters_hit_by_pitch=row["HBP"],balks=row["BK"],batters_faced_by_pitcher=row["BFP"],games_finished=row["GF"],
+    #                                runs_allowed=row["R"],sacrifices_by_opp_batters=row["SH"],sacrifice_flies_by_opp_batters=row["SF"],grounded_into_double_plays_by_opp_batters=row["GIDP"],
+    #                                )
+    # raise Exception ("OOGLY BOOGLY")
+    
+    # with open("fielding.csv") as open_file:
+    #     fielding_info = csv.DictReader(open_file)
+    #     for row in pitching_info:
+    #         player_code = Master.objects.get(player_code=row["playerID"])
+    #         Fielding.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
+    #                                league_code=row["lgID"],position=row["POS"],games=row["G"],games_started=row["GS"],inn_outs=row["InnOuts"],
+    #                                putouts=row["PO"],assists=row["A"],errors=row["E"],double_plays=row["DP"],
+    #                                hits=row["H"],earned_runs=row["ER"],walks=row["BB"],strikeouts=row["SO"],
+    #                                passed_balls=row["PB"],wild_pitches=row["WP"],opp_stolen_bases=row["SB"],opp_caught_stealing=row["CS"],
+    #                                zone_rating=row["ZR"]
+    #                                )
 
-    with open("fielding.csv") as open_file:
-        fielding_info = csv.DictReader(open_file)
-        for row in pitching_info:
-            player_code = Master.objects.get(player_code=row["playerID"])
-            Fielding.objects.create(player_code=player_code,year_code=row["yearID"],stint=row["stint"],team_code=row["teamID"],
-                                   league_code=row["lgID"],position=row["Pos"],games=row["G"],games_started=row["GS"],inn_outs=row["InnOuts"],
-                                   putouts=row["PO"],assists=row["A"],errors=row["E"],double_plays=row["DP"],
-                                   hits=row["H"],earned_runs=row["ER"],walks=row["BB"],strikeouts=row["SO"],
-                                   passed_balls=row["PB"],wild_pitches=row["WP"],opp_stolen_bases=row["SB"],opp_caught_stealing=row["CS"],
-                                   zone_rating=row["ZR"]
-                                   )
-
-    raise Exception ("OOGLY BOOGLY")
 
 
 
